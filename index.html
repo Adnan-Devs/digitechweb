@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salon Leads Landing Page | DigiTech Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1702155930389439');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1702155930389439&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const company = document.getElementById('company').value;
+      const message = `Name: ${name}%0ACompany: ${phone}%0AWhatsApp: ${company}`;
+
+      // Facebook Lead Event Tracking
+      fbq('track', 'Lead');
+
+      window.open(`https://wa.me/923180720424?text=${message}`, '_blank');
+    }
+  </script>
+
+  <style>
+    /* Fonts and Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #0a0a0a, #1e1e1e);
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #1b1b1b;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #FFD700;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #FFD700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .cta-button {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #FFD700;
+      color: #0A0A0A;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e6c200;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      color: #FFD700;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .case-study {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 20px;
+      background-image: url('https://source.unsplash.com/featured/?salon');
+      background-size: cover;
+      background-blend-mode: overlay;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      background: #2d2d2d;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+
+    .faq {
+      margin-top: 30px;
+    }
+
+    .faq h3 {
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #1b1b1b;
+    }
+
+    .footer p {
+      margin-bottom: 15px;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .sticky-cta a {
+      background-color: #FFD700;
+      padding: 15px 25px;
+      color: #0A0A0A;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 10px #ffd70090;
+    }
+
+    form {
+      margin-top: 40px;
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    form input, form button {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    form input {
+      background: #1f1f1f;
+      color: white;
+    }
+
+    form button {
+      background-color: #FFD700;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .about, .projects {
+      background: #151515;
+      padding: 40px 20px;
+      margin-top: 40px;
+      border-radius: 10px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .cta-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">DigiTech Solutions</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>💇‍♀️ Get 150+ Salon Leads in Just 7 Days!</h1>
+    <p>No Contracts. No Risk. Just Real Clients Through Social Media Marketing.</p>
+    <a href="https://wa.me/923180720424" class="cta-button">🚀 Try 1 Week Free on WhatsApp</a>
+  </header>
+
+  <section>
+    <h2>Why Your Salon Needs DigiTech’s Strategy</h2>
+    <ul>
+      <li>📉 Tired of relying only on walk-ins or referrals?</li>
+      <li>📱 Posting online but no one engages or books?</li>
+      <li>🚪 Watching your competitors grow while you're stuck?</li>
+    </ul>
+  </section>
+
+  <section class="case-study">
+    <h2>🚀 Real Results: 238 Leads, $79 Spend</h2>
+    <p><strong>Client:</strong> Texas-based salon</p>
+    <p><strong>Ad Spend:</strong> $79 USD</p>
+    <p><strong>Leads:</strong> 238 Real WhatsApp Leads</p>
+    <p><strong>Strategy:</strong> Meta & Instagram Ads</p>
+  </section>
+
+  <section>
+    <h2>✨ What You Get</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Meta Ads</h3>
+        <p>Targeted ads that reach women ready to book.</p>
+      </div>
+      <div class="feature">
+        <h3>Instagram Boost</h3>
+        <p>Daily posts + stories that convert views into bookings.</p>
+      </div>
+      <div class="feature">
+        <h3>WhatsApp Leads</h3>
+        <p>Get direct leads — not likes. Actual messages daily.</p>
+      </div>
+    </div>
+
+    <form id="contact">
+      <h2>💌 Get Started Now</h2>
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="tel" id="phone" placeholder="Company / Salon Name" required />
+      <input type="tel" id="company" placeholder="WhatsApp Number" required />
+      <button type="submit" onclick="handleSubmit(event)">Send to WhatsApp</button>
+    </form>
+  </section>
+
+  <section class="faq">
+    <h2>❓ FAQ</h2>
+    <h3>Will this work for a small salon?</h3>
+    <p>✅ Yes! We tailor everything based on your location and client type.</p>
+
+    <h3>Do I need a big ad budget?</h3>
+    <p>✅ Nope. We’ve generated 100+ leads with as little as $20!</p>
+
+    <h3>Can I cancel?</h3>
+    <p>✅ Yes. No contracts. Try our 7-day free trial first!</p>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About DigiTech Solutions</h2>
+    <p>We are a digital growth agency helping salons and beauty centers dominate their local market through powerful Meta Ads, Google Ads, social content, and automation. With over 100 clients worldwide, we deliver results — not excuses.</p>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>Client Success Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://images.pexels.com/photos/853427/pexels-photo-853427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,beauty" alt="Salon Ad Results">
+        <p>157 WhatsApp Leads - Riyadh</p>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/300x200/?hair,makeup" alt="Meta Ads Success">
+        <p>130+ Leads - Dubai Salon</p>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/300x200/?spa,client" alt="Digital Growth">
+        <p>238 Leads, $79 Budget - Texas</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>📞 Let DigiTech Solutions Power Your Salon’s Growth</p>
+    <a href="https://wa.me/923180720424" class="cta-button">Start Free Now →</a>
+  </div>
+
+  <div class="sticky-cta">
+    <a href="https://wa.me/923180720424">💬 Chat with DigiTech Now</a>
+  </div>
+</body>
+
+</html>
